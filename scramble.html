@@ -41,8 +41,15 @@
             var i=window.prompt("Please guess the word") 
             window.alert(i)
 
+            var lowercase_guess = i;
+            var lowercase_guess = lowercase_guess.toLowerCase(i);
+
+            lowercase_guess = lowercase_guess.replace(/\s+/g, '');
+            console.log(lowercase_guess)
+
+
             // If the user guesses wrong, tell them they were wrong and the right word.
-            if (i != rand_word){
+            if (lowercase_guess != rand_word){
                 window.alert("That's wrong. The right word is" + " " + rand_word);
             } else {
                window.alert("Congratulations!. You guessed the right word!"); 
