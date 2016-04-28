@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Scramble</title>
+</head>
+<body>
+    <h1>A Javascript Word Scramble Game</h1>
+
+    <script>
+        "use strict";
+
+        var WORDS     = ["appletart", "cookie", "cake", "mousse"];
+        var SCRAMBLED = ["papelttar", "koioec", "akec", "mesosu"];
+
+        var playing = true;
+
+        while (playing) {
+
+            // Grab a random word from the WORDS array
+            var random_number = Math.floor(Math.random() * WORDS.length);
+            var rand_word = WORDS[random_number];
+
+            // Grab the corresponding scrambled word from the SCRAMBLED array
+            // var corresponding_rand_word = SCRAMBLED[Math.floor(Math.random() * SCRAMBLED.length)];
+
+            var corresponding_rand_word = " "
+
+            if (rand_word === WORDS[0]) {
+                corresponding_rand_word = SCRAMBLED[0];
+            } else if (rand_word === WORDS[1]) {
+                corresponding_rand_word = SCRAMBLED[1];
+            } else if (rand_word === WORDS[2]) {
+                corresponding_rand_word = SCRAMBLED[2];
+            } else {
+                corresponding_rand_word = SCRAMBLED[3];
+            }
+
+            window.alert(corresponding_rand_word)
+            // prompt the user to guess the original word when given the scrambled word
+            
+            var i=window.prompt("Please guess the word") 
+            window.alert(i)
+
+            // If the user guesses wrong, tell them they were wrong and the right word.
+            if (i != rand_word){
+                window.alert("That's wrong. The right word is" + " " + rand_word);
+            } else {
+               window.alert("Congratulations!. You guessed the right word!"); 
+            }
+            
+            // If the user guesses the correct word, congratulate them.
+
+            playing = confirm("Press OK To keep playing or Cancel to quit");
+
+            // What does confirm() return?
+            // What does setting the playing variable do?
+        }
+
+        alert("goodbye! Thanks for playing this amazing game");
+    </script>
+    
+</body>
+</html>
